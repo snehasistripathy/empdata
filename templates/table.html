@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'cdnlines.html'%}
+    <title>Document</title>
+
+    <style>
+        body{
+            background-image: url(https://png.pngtree.com/background/20210716/original/pngtree-3d-home-office-virtual-background-light-blue-clock-picture-image_1347709.jpg);
+        }
+        table{
+            color: black;
+            font-size: medium;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1  style="text-align: center;color:rgb(115, 92, 137)">Here is your detalis</h1>
+    <div class="container">
+    {% if data %}
+    <table class="table table-bordered " style="border-color: rgb(6, 90, 90);">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>Location</th>
+                <th>Salary</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.Firstname}}</td>
+                <td>{{i.Lastname}}</td>
+                <td>{{i.Email}}</td>
+                <td>{{i.Company}}</td>
+                <td>{{i.Location}}</td>
+                <td>{{i.Salary}}</td>
+                <td>{{i.Address}}</td>  
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h3>No data available</h3>
+    {% endif %}
+    </div>
+
+    
+</body>
+</html>

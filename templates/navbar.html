@@ -1,0 +1,25 @@
+{%load static%}
+<nav class="navbar navbar-expand-lg navbar-light bg-info ">
+  <img src="{% static 'image/ss.jpeg'%}" alt="" style="height: 2%; width: 2%; border-radius: 50%;">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="{% url 'show' %}">ST</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active bordered" aria-current="page" href="{% url 'Hyderabad'%}">Hyderabad</a>
+        <a class="nav-link active" href="{% url 'Bang'%}">Banglore</a>
+        <a class="nav-link active" href="{% url 'Chennai'%}">Chennai</a>
+        <a class="nav-link active" href="{% url 'Pune'%}">Pune</a>
+        <a class="nav-link active" href="{% url 'Home'%}">Home</a>
+        <form method="POST">
+          {%csrf_token%}
+        <input type="text" class="nav-link active" name="data" placeholder="Enter Cmpany" size="10">
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</nav>
